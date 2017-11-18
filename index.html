@@ -7,14 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Limbik forms using Semantic UI</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.13/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
     <script src="main.js"></script>
-
 </head>
 
-<body></body>
+<body>
+    <div class="ui vertical segment hidden">
+        <div class="main ui container">
+            <form class="ui form">
+                <h1 class="ui dividing header">Limbik form</h1>
+                <div class="field">
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="Name" required>
+                </div>
+                <div class="field">
+                    <label>Email address</label>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="field">
+                    <label>Age</label>
+                    <select class="ui fluid dropdown" placeholder="Please Select">
+                <option value="under-21">under 21</option>
+                <option value="21-35">21-35</option>
+                <option value="36-55">36-55</option>
+                <option value="56-65">56-65</option>
+                <option value="65+">65+</option>
+            </select>
+                </div>
+                <button class="ui button" type="submit">Submit</button>
+                <button class="ui button" type="reset">Reset</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
 
 </html>
