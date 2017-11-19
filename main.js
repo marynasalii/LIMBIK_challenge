@@ -1,6 +1,6 @@
-// (function () {
 $('.ui.form')
     .form({
+        inline: true,
         fields: {
             name: {
                 identifier: 'name',
@@ -26,30 +26,27 @@ $('.ui.form')
             },
         }
     }
-    // , 
-    // {
-    //     on: 'blur',
-    //     inline: true,
-    //     onSuccess: function () {
-    //         // event.preventDefault();
-    //         $('.form').addClass('hidden');
-    //         $('.positive').removeClass('hidden');
-    //         alert('Success');
-    //         // return false; // false is required if you do don't want to let it submit
-
-    //     },
-    //     onFailure: function () {
-    //         alert('Failure');
-    //         return false; // false is required if you do don't want to let it submit                                            
-    //     }
-    // }
     ).submit(function (e) {
         e.preventDefault();
-        if ($('.ui.form').form('is valid')) {
-            $('.ui.form').hide();
-            $('.positive').removeClass('hidden');
-        }
-    });
+        $('.ui.form input').prop('disabled', true);
+        $('.ui.form select').prop('disabled', true);
+        $('.submit').addClass("loading");
+        setTimeout(
+            function () {
+                $('.submit').removeClass("loading");
+                $('.ui.form input').prop('disabled', false);
+                $('.ui.form select').prop('disabled', false);
+            }, 3000)
+
+        setTimeout(
+            function () {
+                if ($('.ui.form').form('is valid')) {
+                    console.log($('.ui.form').form('get values'));
+                    $('.ui.form').hide();
+                    $('.positive').show();
+                }
+            }, 5000) // spinner dissapears after loading state ends (3 sec)                    
+    });              // but success response is still in timeout (5 sec)
 
 
 
