@@ -19,13 +19,13 @@
         <div class="main ui container">
             <form class="ui form">
                 <h1 class="ui dividing header">Limbik form</h1>
-                <div class="field">
+                <div class="required field">
                     <label>Name</label>
-                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="text" name="name" placeholder="Name">
                 </div>
-                <div class="field">
+                <div class="required field">
                     <label>Email address</label>
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="Email">
                 </div>
                 <div class="field">
                     <label>Age</label>
@@ -38,8 +38,8 @@
                         <option value="65+">65+</option>
                     </select>
                 </div>
-                <button class="ui button" type="submit">Submit</button>
-                <button class="ui button" type="reset">Reset</button>
+                <div class="ui submit button">Submit</div>
+                <div class="ui reset button">Reset</div>
             </form>
         </div>
     </div>
