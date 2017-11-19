@@ -1,5 +1,5 @@
 // (function () {
-$('.form')
+$('.ui.form')
     .form({
         fields: {
             name: {
@@ -25,22 +25,33 @@ $('.form')
                 ]
             },
         }
-    }, {
-        on: 'blur',
-        // inline: true,
-        onSuccess: function () {
-            // event.preventDefault();
-            alert('Success');
-            return false; // false is required if you do don't want to let it submit
+    }
+    // , 
+    // {
+    //     on: 'blur',
+    //     inline: true,
+    //     onSuccess: function () {
+    //         // event.preventDefault();
+    //         $('.form').addClass('hidden');
+    //         $('.positive').removeClass('hidden');
+    //         alert('Success');
+    //         // return false; // false is required if you do don't want to let it submit
 
-        },
-        onFailure: function () {
-            alert('Failure');
-            return false; // false is required if you do don't want to let it submit                                            
+    //     },
+    //     onFailure: function () {
+    //         alert('Failure');
+    //         return false; // false is required if you do don't want to let it submit                                            
+    //     }
+    // }
+    ).submit(function (e) {
+        e.preventDefault();
+        if ($('.ui.form').form('is valid')) {
+            $('.ui.form').hide();
+            $('.positive').removeClass('hidden');
         }
     });
-    
-//     .submit(function(e) {
-//     e.preventDefault();
-// });
+
+
+
+
 
