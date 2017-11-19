@@ -1,6 +1,7 @@
 // (function () {
-    $('.main.ui form')
-        .form({
+$('.form')
+    .form({
+        fields: {
             name: {
                 identifier: 'name',
                 rules: [
@@ -19,34 +20,27 @@
                     },
                     {
                         type: 'email',
-                        prompt : 'Please enter a valid e-mail'
+                        prompt: 'Please enter a valid e-mail'
                     }
                 ]
             },
-        }, {
-            on: 'blur',
-            inline: true,
-            onSuccess: function (event) {
-                // event.preventDefault();
-                alert('Success');
-                return false; // false is required if you do don't want to let it submit
+        }
+    }, {
+        on: 'blur',
+        // inline: true,
+        onSuccess: function () {
+            // event.preventDefault();
+            alert('Success');
+            return false; // false is required if you do don't want to let it submit
 
-            },
-            onFailure: function () {
-                alert('Failure');
-                return false; // false is required if you do don't want to let it submit                                            
-            }
-        });
+        },
+        onFailure: function () {
+            alert('Failure');
+            return false; // false is required if you do don't want to let it submit                                            
+        }
+    });
+    
+//     .submit(function(e) {
+//     e.preventDefault();
 // });
 
-
-
-
-
-
-// function simulateAJAXRequest() {
-//     $(".limbik-form").addClass("loading");
-
-// }
-
-// $(".limbik-submit").click(simulateAJAXRequest);
